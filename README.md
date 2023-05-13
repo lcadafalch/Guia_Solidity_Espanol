@@ -16,7 +16,14 @@ Y en este funcionamiento A llama al contrato B para ejecutar una función, enton
  function deposit() public payable {
         balances[msg.sender] += msg.value
  ```
-
-
-
+Lo que pasa por detrás es que se ejecuta la función attack antes de que se ejecute la función withdraw
+con lo cuál cuando uno deposita, primero de ejecuta
+ ```solidity
+ function attack() external payable {
+        require(msg.value >= 1 ether);
+        etherStore.deposit{value: 1 ether}();
+        etherStore.withdraw();
+    }
+    ```
+Con lo cuál de deposita el ethereum y seguidamente se envia al contrato de EtherStore, se deposita , se ejecuta la función withdraw, y seguidamente la función fallback de 
 
