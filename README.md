@@ -9,7 +9,9 @@ Partimos de la base de que hay dos contratos, un contrato A, y otro contrato B
 Y en este funcionamiento A llama al contrato B para ejecutar una función, entonces en reentrancy Attack consiste en volver a ejecutar el contrato antes de que acabe el contrato completo
  
  Pongamnos un ejemplo, tenemos una contrato llamado SacarEthereum.
+
  1.Depositamos un ethereum en el contrato
+ 
  ```solidity
  function deposit() public payable {
         balances[msg.sender] += msg.value
