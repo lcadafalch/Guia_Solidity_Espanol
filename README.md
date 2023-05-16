@@ -9,6 +9,7 @@ Review Certik / Slowmist , etc..
 ## Reentrancy attack o ataque de reentrada.
 Partimos de la base de que hay dos contratos, un contrato A, y otro contrato B
 Y en este funcionamiento A llama al contrato B para ejecutar una función, entonces en reentrancy Attack consiste en volver a ejecutar el contrato antes de que acabe el contrato completo
+En pocas palabras, consiste en crear un bucle entre las funciones de withdraw del contrato de Etherstore y atacante , y la función fallback, de manera que  se vaya ejecutando en forma de bucle, para sacar todos los Ethers del contrato, sin dejar acabar de ejecutar la función principal, con lo cuál tienes una función que no termina de ejecutarse withdraw() que va enviando ethers al contrato elegido , en forma de bucle.
  
  Pongamnos un ejemplo, tenemos una contrato llamado SacarEthereum.
 
