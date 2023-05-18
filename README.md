@@ -65,7 +65,7 @@ En este caso usaríamos el modifier cada vez que se ejecuta una función crític
 Pero para mí seguiría el consejo de usar Openzeppelin que tiene una función específica para este tipo de contratos.
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-## **Aritmetic Overflow y Underflow**
+## Aritmetic Overflow y Underflow
 Esta forma de hackear contratos consiste en aprovecharse del máximo y el mínimo que cabe en un UINT.
 un UINT es una palabra reservada donde se guardan enteros de 32 bits, que tiene un mínimo y un máximo ,una vez el número sobrepase este varemo, vuelve al valor de 0.
 Ejemplo: Ponemos que el máximo de un uint de ejemplo es 7, si en algun momento esta variable tubiera el valor de 8, pasaría automáticamente a 1.
