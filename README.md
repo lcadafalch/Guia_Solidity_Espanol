@@ -62,6 +62,7 @@ contract ReEntrancyGuard {
         locked = false;
     }
 }
+
 ´´´
 En este caso usaríamos el modifier cada vez que se ejecuta una función crítica.
 Pero para mí seguiría el consejo de usar Openzeppelin que tiene una función específica para este tipo de contratos.
