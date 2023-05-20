@@ -66,10 +66,31 @@ Pero para mí seguiría el consejo de usar Openzeppelin que tiene una función e
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 ## Aritmetic Overflow y Underflow
+
 Esta forma de hackear contratos consiste en aprovecharse del máximo y el mínimo que cabe en un UINT.
 un UINT es una palabra reservada donde se guardan enteros de 32 bits, que tiene un mínimo y un máximo ,una vez el número sobrepase este varemo, vuelve al valor de 0.
 Ejemplo: Ponemos que el máximo de un uint de ejemplo es 7, si en algun momento esta variable tubiera el valor de 8, pasaría automáticamente a 1.
 De esta manera podemos ejecutar código malicioso y modificar un smart contract, ( Hay que decir que a partir de la versión de solidity 0.8 , se ha modificado para que no suceda
+
+## Selfdestruct
+
+La función selfdestruct se ejecuta cuando se quiere acabar con el contrato y que no de más uso.
+En cuanto a vulnerabilidad podemos forzar la ejecución de el selfdestruct() y con la activación de este, se envían los Ethers restantes a la cuenta que se elija.
+En el código donde hay el posible hackeo nos encontramos con que forzándolo se puede ejecutar antes la función selfdestruct() antes que la winner()
+
+con lo cuál la selfdestruct envia Ethers a la cuenta seleccionada, con lo que nunca se debe poner que el self destruct envíe en msg.sender, sinó que envíe a cuenta que esté gestionada por el propietario del smart contract.
+```
+    function attack() public payable {
+        // You can simply break the game by sending ether so that
+        // the game balance >= 7 ether
+
+        // cast address to payable
+        address payable addr = payable(address(etherGame));
+        selfdestruct(addr);
+    }
+
+
+
 
 
     
