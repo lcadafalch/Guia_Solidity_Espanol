@@ -24,7 +24,7 @@ El problema es en el momento que se hace el update del Balance.
  ```
 Lo que pasa por detrás es que se ejecuta la función attack antes de que se ejecute la función withdraw
 con lo cuál cuando uno deposita, primero de ejecuta
- ```solidity
+
  function attack() external payable {
         require(msg.value >= 1 ether);
         etherStore.deposit{value: 1 ether}();
