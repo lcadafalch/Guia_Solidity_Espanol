@@ -83,6 +83,7 @@ En cuanto a vulnerabilidad podemos forzar la ejecución de el selfdestruct() y c
 En el código donde hay el posible hackeo nos encontramos con que forzándolo se puede ejecutar antes la función selfdestruct() antes que la winner()
 
 con lo cuál la selfdestruct envia Ethers a la cuenta seleccionada, con lo que nunca se debe poner que el self destruct envíe en msg.sender, sinó que envíe a cuenta que esté gestionada por el propietario del smart contract.
+```solidity
     function attack() public payable {
         // You can simply break the game by sending ether so that
         // the game balance >= 7 ether
@@ -91,6 +92,7 @@ con lo cuál la selfdestruct envia Ethers a la cuenta seleccionada, con lo que n
         address payable addr = payable(address(etherGame));
         selfdestruct(addr);
     }
+```
 
 
 
