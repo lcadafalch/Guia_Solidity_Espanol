@@ -41,7 +41,7 @@ Con lo cuál de deposita el ethereum y seguidamente se envia al contrato de Ethe
             etherStore.withdraw();
         }
     }
-   ```
+```
 Cómo podemos evitarlo?
 Evitando copiar código de desconocidos / usar siempre que podamos el código de Openzeppelin
 * Usando Modificadores para evitar la reenetrada de contratos. 
