@@ -153,7 +153,23 @@ Este error consiste en aprovechar el fallo que tiene la blockchain con los núme
 En algunos casos se intenta coger el blockhash o el blockstamp, y estas no son formas fiables de coger un numero aleatorio.
 
 En caso personal recomiendo usar chainLink https://chain.link/vrf para tener un numero aleatorio de forma correcta.
+```solidity 
+contract GuessTheRandomNumber {
+    constructor() payable {}
 
+    function guess(uint _guess) public {
+        uint answer = uint(
+            keccak256(abi.encodePacked(blockhash(block.number - 1), block.timestamp))
+        );
+
+        if (_guess == answer) {
+            (bool sent, ) = msg.sender.call{value: 1 ether}("");
+            require(sent, "Failed to send Ether");
+        }
+    }
+}
+```
+Código de lo que no hay que hacer :)
 
 
 
