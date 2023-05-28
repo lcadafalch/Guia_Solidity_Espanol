@@ -171,6 +171,8 @@ contract GuessTheRandomNumber {
 ```
 Código de lo que no hay que hacer :)
 
+## Denial of Service // Denegación de servicio.
+
 
 
 
