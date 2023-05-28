@@ -146,6 +146,12 @@ web3.eth.getStorageAt("0x534E4Ce0ffF779513793cfd70308AF195827BD31", "0xb39221ace
 **NUNCA** se debe guardar información sensible dentro de la blockchain
 
 
+##Source of Randomness Vulnerability / Vulnerabilidad de busqueda de aleatorio.
+
+Este error consiste en aprovechar el fallo de 
+
+
+
 
 
     
