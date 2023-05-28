@@ -146,9 +146,13 @@ web3.eth.getStorageAt("0x534E4Ce0ffF779513793cfd70308AF195827BD31", "0xb39221ace
 **NUNCA** se debe guardar información sensible dentro de la blockchain
 
 
-##Source of Randomness Vulnerability / Vulnerabilidad de busqueda de aleatorio.
+## Source of Randomness Vulnerability / Vulnerabilidad de busqueda de aleatorio.
 
-Este error consiste en aprovechar el fallo de 
+Este error consiste en aprovechar el fallo que tiene la blockchain con los números aleatorios, el problema viene de que si tu haces un número aleatorio, como por ejemplo un math.random() , esa función se ejecutará en todos los nodos de la red de ethereum, y en cada nodo tendrá un resultado diferente, y quedaría totalmente invalidado ese contrato.
+
+En algunos casos se intenta coger el blockhash o el blockstamp, y estas no son formas fiables de coger un numero aleatorio.
+
+En caso personal recomiendo usar chainLink https://chain.link/vrf para tener un numero aleatorio de forma correcta.
 
 
 
