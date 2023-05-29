@@ -173,7 +173,8 @@ Código de lo que no hay que hacer :)
 
 ## Denial of Service // Denegación de servicio.
 
-
+Hay muchas formas de atacar un contrato inteligente para dejarlo inutilizable.
+Una vulnerabilidad que presentamos aquí es la denegación de servicio al hacer que la función para enviar Ether falle.
 
 
     
