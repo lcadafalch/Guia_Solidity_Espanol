@@ -176,7 +176,14 @@ Código de lo que no hay que hacer :)
 Hay muchas formas de atacar un contrato inteligente para dejarlo inutilizable.
 Una vulnerabilidad que presentamos aquí es la denegación de servicio al hacer que la función para enviar Ether falle.
 
-a
+Este ataque se basa en usar un contrato de atacante, que no tenga una fallback function, de manera que va a fallar el envío de ether. 
+En el ejemplo señalado usa la funcion atacante, para enviar el valor, pero falla en el proceso, con lo cuál se queda cómo el atacante el control del contrato.
+```solidity
+
+    function attack() public payable {
+        kingOfEther.claimThrone{value: msg.value}();
+    }
+```
 
     
 
