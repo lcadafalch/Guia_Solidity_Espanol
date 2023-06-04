@@ -203,4 +203,7 @@ contract Attack {
     }
 }
 ```
+## Hiding Malicious Code with External Contract // Código malicioso escondido en un contrato externo
+
+
 
