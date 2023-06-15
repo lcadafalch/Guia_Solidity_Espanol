@@ -206,7 +206,7 @@ contract Attack {
 ## Hiding Malicious Code with External Contract // Código malicioso escondido en un contrato externo
 En este caso consiste en ejecutar código de un contrato externo pensando que se ejecuta un contrato correcto, realmente se ejecuta un contrato malicioso.
 El error es el siguiente yo tengo mi contrato y sé que tu contrato hay una función que me interesa.
-````solidity
+```solidity
 contract contrato1 {
     Bar bar;
     constructor(address _bar) {
