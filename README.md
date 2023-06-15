@@ -219,5 +219,6 @@ contract contrato1 {
 ```
 Ejecuto el contrato externo que considero que es el correcto , pero el atacante hace el deploy de un contrato con el mismo nombre pero diferente código, con lo cuál perpetuará la ejecución de código malicioso.
 
+## Honeypot // Trampa para hackers
 
 
