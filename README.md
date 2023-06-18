@@ -1,4 +1,4 @@
-# solidity_attacks
+ # solidity_attacks
 Analisys of multiples sources of attacking in Solidity ,( Smart contracts) and how can stop it,
 Useful reccomendation is to use always OPENZEPPELIN  and AUDIT always before deploying anything :)
 https://www.openzeppelin.com/
@@ -220,5 +220,6 @@ contract contrato1 {
 Ejecuto el contrato externo que considero que es el correcto , pero el atacante hace el deploy de un contrato con el mismo nombre pero diferente código, con lo cuál perpetuará la ejecución de código malicioso.
 
 ## Honeypot // Trampa para hackers
+Combinando dos exploits, reentrada y ocultación de código malicioso, podemos construir un contrato
 
 
