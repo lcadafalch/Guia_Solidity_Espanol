@@ -1,6 +1,11 @@
- # solidity_attacks
+ # solidity_attacks // Ataques en solidity
+ 
 Analisys of multiples sources of attacking in Solidity ,( Smart contracts) and how can stop it,
-Useful reccomendation is to use always OPENZEPPELIN  and AUDIT always before deploying anything :)
+Useful reccomendation is to use always **OPENZEPPELIN**  and **AUDIT** always before deploying anything :)
+
+
+Análisis de múltiples fuentes de ataque en Solidity (contratos inteligentes) y cómo detenerlo.
+Una recomendación útil es usar siempre **OPENZEPPELIN** y **AUDIT** siempre antes de implementar cualquier cosa :)
 https://www.openzeppelin.com/
 
 
