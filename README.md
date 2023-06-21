@@ -225,6 +225,7 @@ contract contrato1 {
 Ejecuto el contrato externo que considero que es el correcto , pero el atacante hace el deploy de un contrato con el mismo nombre pero diferente código, con lo cuál perpetuará la ejecución de código malicioso.
 
 ## Honeypot // Trampa para hackers
-Combinando dos exploits, reentrada y ocultación de código malicioso, podemos construir un contrato
+Combinando dos exploits, reentrada y ocultación de código malicioso, podemos construir un contrato.
+La cuestión de esto es básicamente usar una función hackeable, con sólo un evento de Log dentro para únicamente visualizar quien ha intentado ejecutar esa función
 
 
