@@ -228,4 +228,17 @@ Ejecuto el contrato externo que considero que es el correcto , pero el atacante 
 Combinando dos exploits, reentrada y ocultación de código malicioso, podemos construir un contrato.
 La cuestión de esto es básicamente usar una función hackeable, con sólo un evento de Log dentro para únicamente visualizar quien ha intentado ejecutar esa función
 
+En este ataque la idea principal es usar un contrato que se pueda ejecutar un ataque de reentrada, pero con la idea de que el atacante la ejecute pero con código en otro contrato que controle
+Tenemos esta función que es vulnerable a los ataques de reentrada:
+``` solidity
+    function withdraw(uint _amount) public {
+        require(_amount <= balances[msg.sender], "Insufficient funds");
 
+        (bool sent, ) = msg.sender.call{value: _amount}("");
+        require(sent, "Failed to send Ether");
+
+        balances[msg.sender] -= _amount;
+
+        logger.log(msg.sender, _amount, "Withdraw");
+    }
+```
