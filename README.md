@@ -242,3 +242,12 @@ Tenemos esta función que es vulnerable a los ataques de reentrada:
         logger.log(msg.sender, _amount, "Withdraw");
     }
 ```
+En otro contrato que no pueda ver el usuario tenemos esta funcion que analiza si es un retiro o un ingreso de dinero a  la cuenta, y en caso de que sea un retiro se ejecuta la funcion revert
+```solidity
+contract HoneyPot {
+    function log(address _caller, uint _amount, string memory _action) public {
+        if (equal(_action, "Withdraw")) {
+            revert("It's a trap");
+        }
+    }
+```
