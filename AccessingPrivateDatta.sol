@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
-
 /*
 Note: cannot use web3 on JVM, so use the contract deployed on Goerli
 Note: browser Web3 is old so use Web3 from truffle console
@@ -8,7 +7,6 @@ Note: browser Web3 is old so use Web3 from truffle console
 Contract deployed on Goerli
 0x534E4Ce0ffF779513793cfd70308AF195827BD31
 */
-
 /*
 # Storage
 - 2 ** 256 slots
