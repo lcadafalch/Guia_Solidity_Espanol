@@ -251,3 +251,17 @@ contract HoneyPot {
         }
     }
 ```
+## Frontrunning // Inversión ventajista.
+En el caso de frontrunning, lo primero de todo es contextualizar que es y luego explicar que juego tiene en los mercados tanto tradicionales cómo en los mercados de criptomonedas.
+
+El Front running, también conocido como inversión ventajista es una forma ilegal de operar en el mercado que se da cuando los operadores saben las órdenes de compra y de venta que se van a producir y que provocarán alteraciones en los precios del mercado y deciden utilizar esa información para obtener beneficios.
+Es decir, en los mercados tradicionales, es una práctica ilegal, pero en el mercado crypto, cambia todo... porque?
+Es diferente básicamente porqué todas las transacciones son públicas , están puestas en una mempool donde todo el mundo las puede ver, con lo cuál no hay nadie que tenga información priviegiada, sino que la tiene todo el mundo.
+
+Una vez contextualizado el que es el frontrunning toca ver cómo ejecutarlo y generar ventaja.
+
+
+
+
+
+
