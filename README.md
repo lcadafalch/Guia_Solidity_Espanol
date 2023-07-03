@@ -258,8 +258,7 @@ El Front running, también conocido como inversión ventajista es una forma ileg
 Es decir, en los mercados tradicionales, es una práctica ilegal, pero en el mercado crypto, cambia todo... porque?
 Es diferente básicamente porqué todas las transacciones son públicas , están puestas en una mempool donde todo el mundo las puede ver, con lo cuál no hay nadie que tenga información priviegiada, sino que la tiene todo el mundo.
 
-Una vez contextualizado el que es el frontrunning toca ver cómo ejecutarlo y generar ventaja.
-
+Para evitar ser frontrunneados hay que tener en cuenta de que nuestra transacción va a ser minada después de un tiempo, para evitar esto, podemos usar **Flashbots** para enviar nuestras transacciones sin que terminen el la mempool. 
 
 
 
