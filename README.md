@@ -260,7 +260,8 @@ Es diferente básicamente porqué todas las transacciones son públicas , están
 
 Para evitar ser frontrunneados hay que tener en cuenta de que nuestra transacción va a ser minada después de un tiempo, para evitar esto, podemos usar **Flashbots** para enviar nuestras transacciones sin que terminen el la mempool. 
 
-
+## Block Timestamp Manipulation
+Esta vulnerabilidad hay que tener en cuenta de que usar el timestamp para algo aleatoria, se estaría usando de forma errónea, ya que es totalmente manipulable.
 
 
 
