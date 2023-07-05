@@ -260,8 +260,19 @@ Es diferente básicamente porqué todas las transacciones son públicas , están
 
 Para evitar ser frontrunneados hay que tener en cuenta de que nuestra transacción va a ser minada después de un tiempo, para evitar esto, podemos usar **Flashbots** para enviar nuestras transacciones sin que terminen el la mempool. 
 
-## Block Timestamp Manipulation
+## Block Timestamp Manipulation // Manipulación de la marca de tiempo 
 Esta vulnerabilidad hay que tener en cuenta de que usar el timestamp para algo aleatoria, se estaría usando de forma errónea, ya que es totalmente manipulable.
+Cómo ejemplo si se hace un código que se ejecuta a partir de un timestamp concreto, saber que este es manipulable.
+```solidity
 
+
+        if (block.timestamp % 15 == 0) {
+            (bool sent, ) = msg.sender.call{value: address(this).balance}("");
+            require(sent, "Failed to send Ether");
+        }
+```
+
+En este caso si ejecutamos una función que depende de un timestamp , se puede ejecutar en el momento que se quiere si el minero tiene suficiente poder en la red.
+Con este ataque, lo importante que hay de quedar ante todo ,esque el timestamp es manipulable.
 
 
