@@ -274,5 +274,6 @@ Cómo ejemplo si se hace un código que se ejecuta a partir de un timestamp conc
 
 En este caso si ejecutamos una función que depende de un timestamp , se puede ejecutar en el momento que se quiere si el minero tiene suficiente poder en la red.
 Con este ataque, lo importante que hay de quedar ante todo ,esque el timestamp es manipulable.
+### Signature replay / Reproducción de firma
 
 
