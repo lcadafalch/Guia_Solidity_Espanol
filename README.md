@@ -276,4 +276,7 @@ En este caso si ejecutamos una función que depende de un timestamp , se puede e
 Con este ataque, lo importante que hay de quedar ante todo ,esque el timestamp es manipulable.
 ### Signature replay / Reproducción de firma
 
+Firmar mensajes fuera de la cadena y tener un contrato que requiera esa firma antes de ejecutar una función es una técnica útil.
+
+
 
