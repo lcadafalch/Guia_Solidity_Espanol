@@ -2,7 +2,9 @@
  
 Analisys of multiples sources of attacking in Solidity ,( Smart contracts) and how can stop it,
 Useful reccomendation is to use always **OPENZEPPELIN**  and **AUDIT** always before deploying anything :)
+<br />
 Review the official documentation at https://soliditylang.org/
+<br />
 This is part of the project https://solidity-by-example.org/ 
 
 
@@ -11,8 +13,11 @@ This is part of the project https://solidity-by-example.org/
 Análisis de múltiples fuentes de ataque en Solidity (contratos inteligentes) y cómo detenerlo.
 Una recomendación útil es usar siempre **OPENZEPPELIN** y **AUDIT** siempre antes de implementar cualquier cosa :)
 https://www.openzeppelin.com/
+<br />
 Revisa la documentación oficial en: https://soliditylang.org/
+<br />
 Esto esa parte del proyecto: https://solidity-by-example.org/ 
+<br />
 
 Review Certik / Slowmist , etc..
 
