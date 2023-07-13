@@ -2,10 +2,11 @@
  
 Analisys of multiples sources of attacking in Solidity ,( Smart contracts) and how can stop it,
 Useful reccomendation is to use always **OPENZEPPELIN**  and **AUDIT** always before deploying anything :)
+
 <br />
-Review the official documentation at https://soliditylang.org/
+*Review the official documentation at* **https://soliditylang.org/**
 <br />
-This is part of the project https://solidity-by-example.org/ 
+*This is part of the project :* **https://solidity-by-example.org/**
 
 
 
