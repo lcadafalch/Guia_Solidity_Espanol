@@ -1,5 +1,5 @@
 ![Screenshot](solidityEspanol.png) 
-### * ATAQUEN en Solidity En Español*
+### * ATAQUES en Solidity En Español*
 Análisis de múltiples fuentes de ataque en Solidity (contratos inteligentes) y cómo detenerlo.
 Una recomendación útil es usar siempre **OPENZEPPELIN** y **AUDIT** siempre antes de implementar cualquier cosa :)
 https://www.openzeppelin.com/
