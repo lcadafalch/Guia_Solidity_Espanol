@@ -74,6 +74,7 @@ contract ReEntrancyGuard {
 En este caso usaríamos el modifier cada vez que se ejecuta una función crítica.
 Pero para mí seguiría el consejo de usar Openzeppelin que tiene una función específica para este tipo de contratos.
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+Si quieres información más extendida sobre los reentrancy attacks te recomiendo visitar: https://consensys.github.io/smart-contract-best-practices/attacks/reentrancy/
 
 ## Aritmetic Overflow y Underflow
 
