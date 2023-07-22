@@ -74,14 +74,17 @@ contract ReEntrancyGuard {
 En este caso usaríamos el modifier cada vez que se ejecuta una función crítica.
 Pero para mí seguiría el consejo de usar Openzeppelin que tiene una función específica para este tipo de contratos.
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+<br />
 Si quieres información más extendida sobre los reentrancy attacks te recomiendo visitar: https://consensys.github.io/smart-contract-best-practices/attacks/reentrancy/
 
-## Aritmetic Overflow y Underflow
+## Aritmetic Overflow y Underflow // Desbordamiento Aritmético ( por máximos y mínimos)
 
 Esta forma de hackear contratos consiste en aprovecharse del máximo y el mínimo que cabe en un UINT.
 un UINT es una palabra reservada donde se guardan enteros de 32 bits, que tiene un mínimo y un máximo ,una vez el número sobrepase este varemo, vuelve al valor de 0.
 Ejemplo: Ponemos que el máximo de un uint de ejemplo es 7, si en algun momento esta variable tubiera el valor de 8, pasaría automáticamente a 1.
 De esta manera podemos ejecutar código malicioso y modificar un smart contract, ( Hay que decir que a partir de la versión de solidity 0.8 , se ha modificado para que no suceda
+<br />
+Esta caracteristica  es común en varios lenguajes cómo C, Rust, o Solidity
 
 ## Selfdestruct
 
