@@ -86,7 +86,7 @@ De esta manera podemos ejecutar código malicioso y modificar un smart contract,
 <br />
 Esta caracteristica  es común en varios lenguajes cómo C, Rust, o Solidity
 
-## Selfdestruct
+## Selfdestruct // Autodestrucción
 
 La función selfdestruct se ejecuta cuando se quiere acabar con el contrato y que no de más uso.
 En cuanto a vulnerabilidad podemos forzar la ejecución de el selfdestruct() y con la activación de este, se envían los Ethers restantes a la cuenta que se elija.
