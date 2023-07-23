@@ -2,7 +2,7 @@
 ### *ATAQUES en Solidity En Español (Descripción y principales)*
 
 Análisis de múltiples fuentes de ataque en Solidity (contratos inteligentes) y cómo detenerlo.
-Una recomendación útil es usar siempre **OPENZEPPELIN** y **AUDIT** siempre antes de implementar cualquier cosa :)
+Una recomendación útil es usar siempre **OPENZEPPELIN** y **AUDITAR** siempre antes de implementar cualquier cosa :)
 https://www.openzeppelin.com/
 <br />
 Revisa la documentación oficial en: https://soliditylang.org/
