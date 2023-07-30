@@ -89,3 +89,18 @@ Asegúrese de que se produzcan todos los cambios de estado antes de llamar a los
 Use modificadores de funciones que eviten el reingreso
 Aquí hay un ejemplo de un guardia de reingreso
 */
+
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.17;
+
+contract ReEntrancyGuard {
+    bool internal locked;
+
+    modifier noReentrant() {
+        require(!locked, "No re-entrancy");
+        locked = true;
+        _;
+        locked = false;
+    }
+}
