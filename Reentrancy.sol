@@ -1,8 +1,7 @@
-// Vulnerability
-// Let's say that contract A calls contract B.
+// VULNERABILIDAD : ATAQUE DE REENTRADA / REENTRANCY ATTACK
 
 //Digamos que el contrato A llama al contrato B.
-El exploit de reentrada permite que B vuelva a llamar a A antes de que A finalice la ejecución.
+//El exploit de reentrada permite que B vuelva a llamar a A antes de que A finalice la ejecución.
 
 /*
 EtherStore es un contrato donde puede depositar y retirar ETH.
