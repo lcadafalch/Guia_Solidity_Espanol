@@ -1,15 +1,15 @@
 ![Screenshot](solidityEspanol.png) 
 ### *ATAQUES en Solidity En Español (Descripción y principales)*
 
-*DE QUE TRATA ESTE REPOSITORIO?*<br />
+**DE QUE TRATA ESTE REPOSITORIO?** <br />
 
 Análisis de múltiples fuentes de ataque en Solidity (contratos inteligentes) y consejos de cómo solventarlo e identificarlo.
 
-*CÓMO FUNCIONA?*<br />
+**CÓMO FUNCIONA?** <br />
 
 Cada ataque tiene dos partes por un lado una versión genérica en su propio documento , y por otra parte una descripción detallada en el Readme.
 
-*iNFORMACIÓN ÚTIL*<br />
+**iNFORMACIÓN ÚTIL** <br />
 
 Una recomendación útil es usar siempre **OPENZEPPELIN** y **AUDITAR** siempre antes de implementar cualquier cosa :)
 https://www.openzeppelin.com/
