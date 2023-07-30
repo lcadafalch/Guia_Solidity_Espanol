@@ -1,39 +1,38 @@
 // Vulnerability
 // Let's say that contract A calls contract B.
 
-// Reentracy exploit allows B to call back into A before A finishes execution.
-
-
-
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+//Digamos que el contrato A llama al contrato B.
+El exploit de reentrada permite que B vuelva a llamar a A antes de que A finalice la ejecución.
 
 /*
-EtherStore is a contract where you can deposit and withdraw ETH.
-This contract is vulnerable to re-entrancy attack.
-Let's see why.
+EtherStore es un contrato donde puede depositar y retirar ETH.
+Este contrato es vulnerable al ataque de reingreso.
+Veamos por qué.
 
-1. Deploy EtherStore
-2. Deposit 1 Ether each from Account 1 (Alice) and Account 2 (Bob) into EtherStore
-3. Deploy Attack with address of EtherStore
-4. Call Attack.attack sending 1 ether (using Account 3 (Eve)).
-   You will get 3 Ethers back (2 Ether stolen from Alice and Bob,
-   plus 1 Ether sent from this contract).
+1. Implementar EtherStore
+2. Deposite 1 Ether de la Cuenta 1 (Alice) y de la Cuenta 2 (Bob) en EtherStore
+3. Implementar ataque con dirección de EtherStore
+4. Llame a Attack.attack enviando 1 ether (usando la cuenta 3 (Eve)).
+   Recibirás 3 Ether de vuelta (2 Ether robados de Alice y Bob,
+   más 1 Ether enviado de este contrato).
 
-What happened?
-Attack was able to call EtherStore.withdraw multiple times before
-EtherStore.withdraw finished executing.
+¿Qué pasó?
+Attack pudo llamar a EtherStore.withdraw varias veces antes
+EtherStore.withdraw terminó de ejecutarse.
 
-Here is how the functions were called
-- Attack.attack
-- EtherStore.deposit
-- EtherStore.withdraw
-- Attack fallback (receives 1 Ether)
-- EtherStore.withdraw
-- Attack.fallback (receives 1 Ether)
-- EtherStore.withdraw
-- Attack fallback (receives 1 Ether)
+Así es como se llamaron las funciones.
+- Ataque.ataque
+- EtherStore.depósito
+- EtherStore.retirar
+- Ataque alternativo (recibe 1 Ether)
+- EtherStore.retirar
+- Attack.fallback (recibe 1 Ether)
+- EtherStore.retirar
+- Ataque alternativo (recibe 1 Ether)
+
+
 */
+pragma solidity ^0.8.17;
 
 contract EtherStore {
     mapping(address => uint) public balances;
@@ -65,7 +64,7 @@ contract Attack {
         etherStore = EtherStore(_etherStoreAddress);
     }
 
-    // Fallback is called when EtherStore sends Ether to this contract.
+// Función de ayuda para verificar el saldo de este contrato
     fallback() external payable {
         if (address(etherStore).balance >= 1 ether) {
             etherStore.withdraw();
@@ -83,3 +82,10 @@ contract Attack {
         return address(this).balance;
     }
 }
+/*
+Técnicas Preventivas
+
+Asegúrese de que se produzcan todos los cambios de estado antes de llamar a los contratos externos
+Use modificadores de funciones que eviten el reingreso
+Aquí hay un ejemplo de un guardia de reingreso
+*/
