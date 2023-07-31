@@ -21,9 +21,11 @@ Esto esa parte del proyecto: https://solidity-by-example.org/
 
 En caso de querer hacer un deploy de smart contracts, siempre tiene que ser validado por una empresa externa en búsqueda de fallos o hacks que pueden encontrarse.
 Un ejemplo de esta puede ser<br />
- **Slowmist** https://www.slowmist.com/ <br />
- **Certik**https://www.certik.com/
+ **Slowmist**:  https://www.slowmist.com/ <br />
+ **Certik**: https://www.certik.com/
  
+ ###PRINCIPALES ATAQUES
+
 ## Reentrancy attack o ataque de reentrada.
 Partimos de la base de que hay dos contratos, un contrato A, y otro contrato B
 Y en este funcionamiento A llama al contrato B para ejecutar una función, entonces en reentrancy Attack consiste en volver a ejecutar el contrato antes de que acabe el contrato completo.
