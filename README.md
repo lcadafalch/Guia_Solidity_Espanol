@@ -24,7 +24,7 @@ Un ejemplo de esta puede ser<br />
  **Slowmist**:  https://www.slowmist.com/ <br />
  **Certik**: https://www.certik.com/
  
- ### PRINCIPALES ATAQUES
+ # PRINCIPALES ATAQUES
 
 ## Reentrancy attack o ataque de reentrada.
 Partimos de la base de que hay dos contratos, un contrato A, y otro contrato B
