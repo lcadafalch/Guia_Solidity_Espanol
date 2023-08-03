@@ -15,10 +15,14 @@ pragma solidity ^0.7.6;
 // El usuario también puede extender el tiempo de espera más allá del período de espera de 1 semana.
 /*
 
-1. Deploy TimeLock
-2. Deploy Attack with address of TimeLock
-3. Call Attack.attack sending 1 ether. You will immediately be able to
-   withdraw your ether.
+1. Implementar TimeLock
+2. Implementar ataque con dirección de TimeLock
+3. Llamar a la función Attack.attack enviando 1 ether. Inmediatamente podrá retirar su éter.
+
+¿Qué pasó?
+El ataque provocó el desbordamiento de TimeLock.lockTime y pudo retirarse
+antes del período de espera de 1 semana.
+*/
 
 What happened?
 Attack caused the TimeLock.lockTime to overflow and was able to withdraw
