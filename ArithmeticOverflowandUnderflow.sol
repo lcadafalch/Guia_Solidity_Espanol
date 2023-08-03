@@ -1,20 +1,20 @@
-Arithmetic Overflow and Underflow
+Arithmetic Overflow and Underflow // Overflow 
 Vulnerability
 Solidity < 0.8
-Integers in Solidity overflow / underflow without any errors
+Los enteros no tienen  problemas de Desbordamiento, tanto en numeros positivos cómo negativos.
 
 Solidity >= 0.8
-Default behaviour of Solidity 0.8 for overflow / underflow is to throw an error.
+Por encima de la versión 0.8, tiene un control que en caso de desbordamiento imprime error.
 
-
+// EJEMPLO DE CONTRATO CON PROBLEMAS DE OVERFLOW
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.7.6;
 
-// This contract is designed to act as a time vault.
-// User can deposit into this contract but cannot withdraw for atleast a week.
-// User can also extend the wait time beyond the 1 week waiting period.
-
+// Este contrato está diseñado para actuar como una bóveda de tiempo.
+// El usuario puede depositar en este contrato pero no puede retirar durante al menos una semana.
+// El usuario también puede extender el tiempo de espera más allá del período de espera de 1 semana.
 /*
+
 1. Deploy TimeLock
 2. Deploy Attack with address of TimeLock
 3. Call Attack.attack sending 1 ether. You will immediately be able to
