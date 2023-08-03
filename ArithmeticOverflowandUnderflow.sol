@@ -24,11 +24,6 @@ El ataque provocó el desbordamiento de TimeLock.lockTime y pudo retirarse
 antes del período de espera de 1 semana.
 */
 
-What happened?
-Attack caused the TimeLock.lockTime to overflow and was able to withdraw
-before the 1 week waiting period.
-*/
-
 contract TimeLock {
     mapping(address => uint) public balances;
     mapping(address => uint) public lockTime;
