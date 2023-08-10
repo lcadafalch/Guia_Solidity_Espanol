@@ -1,3 +1,11 @@
+//Delegatecall o llamada delegada
+// Delegatecall es dificil de usar y un mal uso puede llevar a resultados devastadores.
+/* Hay que tener dos cosas en cuenta al usar delegatecall
+1- que preserva el contexto general ( si es storage, caller, etc..)
+2- el diseño de almacenamiento debe ser el mismo para el contrato que llama delegado y el contrato que recibe la llamada
+*/
+// CONTRATO DE EJEMPLO
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
