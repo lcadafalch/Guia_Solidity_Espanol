@@ -1,21 +1,25 @@
+// VULNERABILIDAD ACCESSING PRIVATE DATA o ACCESO A DATOS PRIVADOS
+*/
+Hay que tener en cuenta que TODOS  los datos dentro de la blockchain son públicos.
+Veamos cómo podemos leer datos privados. En el proceso, aprenderá cómo Solidity almacena variables de estado.
+*/
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
-/*
-Note: cannot use web3 on JVM, so use the contract deployed on Goerli
-Note: browser Web3 is old so use Web3 from truffle console
+Nota: no se puede usar web3 en JVM, así que use el contrato implementado en Goerli
+Nota: el navegador Web3 es antiguo, así que use Web3 desde la consola de truffle
 
-Contract deployed on Goerli
+Contrato desplegado en Goerli
 0x534E4Ce0ffF779513793cfd70308AF195827BD31
 */
-/*
-# Storage
-- 2 ** 256 slots
-- 32 bytes for each slot
-- data is stored sequentially in the order of declaration
-- storage is optimized to save space. If neighboring variables fit in a single
-  32 bytes, then they are packed into the same slot, starting from the right
-*/
 
+/*
+# Almacenamiento
+- 2 ** 256 ranuras
+- 32 bytes para cada ranura
+- los datos se almacenan secuencialmente en el orden de declaración
+- El almacenamiento está optimizado para ahorrar espacio. Si las variables vecinas caben en una sola
+  32 bytes, luego se empaquetan en la misma ranura, comenzando desde la derecha
+*/
 contract Vault {
     // slot 0
     uint public count = 123;
@@ -36,17 +40,16 @@ contract Vault {
         uint id;
         bytes32 password;
     }
+// ranura 6 - longitud de la matriz
+    // a partir de ranura hash (6) - elementos de matriz
+    // ranura donde se almacena el elemento de la matriz = keccak256 (ranura)) + (índice * tamaño del elemento)
+    // donde slot = 6 y elementSize = 2 (1 (uint) + 1 (bytes32))
+ User[] private users;
 
-    // slot 6 - length of array
-    // starting from slot hash(6) - array elements
-    // slot where array element is stored = keccak256(slot)) + (index * elementSize)
-    // where slot = 6 and elementSize = 2 (1 (uint) +  1 (bytes32))
-    User[] private users;
-
-    // slot 7 - empty
-    // entries are stored at hash(key, slot)
-    // where slot = 7, key = map key
-    mapping(uint => User) private idToUser;
+    // espacio 7 - vacío
+    // las entradas se almacenan en hash (clave, ranura)
+    // donde ranura = 7, clave = clave de mapa
+ mapping(uint => User) private idToUser;
 
     constructor(bytes32 _password) {
         password = _password;
@@ -73,32 +76,5 @@ contract Vault {
 }
 
 /*
-slot 0 - count
-web3.eth.getStorageAt("0x534E4Ce0ffF779513793cfd70308AF195827BD31", 0, console.log)
-slot 1 - u16, isTrue, owner
-web3.eth.getStorageAt("0x534E4Ce0ffF779513793cfd70308AF195827BD31", 1, console.log)
-slot 2 - password
-web3.eth.getStorageAt("0x534E4Ce0ffF779513793cfd70308AF195827BD31", 2, console.log)
-
-slot 6 - array length
-getArrayLocation(6, 0, 2)
-web3.utils.numberToHex("111414077815863400510004064629973595961579173665589224203503662149373724986687")
-Note: We can also use web3 to get data location
-web3.utils.soliditySha3({ type: "uint", value: 6 })
-1st user
-web3.eth.getStorageAt("0x534E4Ce0ffF779513793cfd70308AF195827BD31", "0xf652222313e28459528d920b65115c16c04f3efc82aaedc97be59f3f377c0d3f", console.log)
-web3.eth.getStorageAt("0x534E4Ce0ffF779513793cfd70308AF195827BD31", "0xf652222313e28459528d920b65115c16c04f3efc82aaedc97be59f3f377c0d40", console.log)
-Note: use web3.toAscii to convert bytes32 to alphabet
-2nd user
-web3.eth.getStorageAt("0x534E4Ce0ffF779513793cfd70308AF195827BD31", "0xf652222313e28459528d920b65115c16c04f3efc82aaedc97be59f3f377c0d41", console.log)
-web3.eth.getStorageAt("0x534E4Ce0ffF779513793cfd70308AF195827BD31", "0xf652222313e28459528d920b65115c16c04f3efc82aaedc97be59f3f377c0d42", console.log)
-
-slot 7 - empty
-getMapLocation(7, 1)
-web3.utils.numberToHex("81222191986226809103279119994707868322855741819905904417953092666699096963112")
-Note: We can also use web3 to get data location
-web3.utils.soliditySha3({ type: "uint", value: 1 }, {type: "uint", value: 7})
-user 1
-web3.eth.getStorageAt("0x534E4Ce0ffF779513793cfd70308AF195827BD31", "0xb39221ace053465ec3453ce2b36430bd138b997ecea25c1043da0c366812b828", console.log)
-web3.eth.getStorageAt("0x534E4Ce0ffF779513793cfd70308AF195827BD31", "0xb39221ace053465ec3453ce2b36430bd138b997ecea25c1043da0c366812b829", console.log)
-*/
+TÉCNICAS PREVENTIVAS:
+NUNCA almacenes información SENSIBLE  dentro de la cadena de bloques.
