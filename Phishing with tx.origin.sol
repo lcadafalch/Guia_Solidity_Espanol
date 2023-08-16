@@ -1,29 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
-
-What's the difference between msg.sender and tx.origin?
-If contract A calls B, and B calls C, in C msg.sender is B and tx.origin is A.
-
-Vulnerability
-A malicious contract can deceive the owner of a contract into calling a function that only the owner should be able to call.
-
-/*
-Wallet is a simple contract where only the owner should be able to transfer
-Ether to another address. Wallet.transfer() uses tx.origin to check that the
-caller is the owner. Let's see how we can hack this contract
-*/
-
-/*
-1. Alice deploys Wallet with 10 Ether
-2. Eve deploys Attack with the address of Alice's Wallet contract.
-3. Eve tricks Alice to call Attack.attack()
-4. Eve successfully stole Ether from Alice's wallet
-
-What happened?
-Alice was tricked into calling Attack.attack(). Inside Attack.attack(), it
-requested a transfer of all funds in Alice's wallet to Eve's address.
-Since tx.origin in Wallet.transfer() is equal to Alice's address,
-it authorized the transfer. The wallet transferred all Ether to Eve.
+ all Ether to Eve.
 */
 
 contract Wallet {
