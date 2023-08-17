@@ -2,7 +2,7 @@
 PARTIENDO DE LA BASE QUE : Si el contrato A llama a B y B llama a C, en C msg.sender es B y tx.origin es A.
 
 RESUMEN: A --> B 
-         B --> C MSG.SENDER = B, TX.ORIGIN = A.
+         B --> C MSG.SENDER = B, TX.ORIGIN = A. ( El tx.origin viene reflejado a partir del 
 
 Vulnerabilidad
 Un contrato malintencionado puede engañar al propietario de un contrato para que llame a una función que solo el propietario debería poder llamar.
