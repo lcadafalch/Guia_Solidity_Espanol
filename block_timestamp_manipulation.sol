@@ -42,4 +42,5 @@ contract Roulette {
     }
 }
 
-
+// TÉCNICAS PREVENTIVAS
+1- NUNCA usar block.timestamp cómo creación de número aleatorio o relacionado.
