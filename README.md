@@ -209,6 +209,11 @@ En el ejemplo señalado usa la funcion atacante, para enviar el valor, pero fall
     }
 ```
 ## Phishing with tx.origin // Phishing con el origen de la transacción
+El principal problema con el tx.origin , es que se recoge del primer contrato que proviene, por ejemplo :
+PARTIENDO DE LA BASE QUE : Si el contrato A llama a B y B llama a C, en C msg.sender es B y tx.origin es A.
+RESUMEN: A --> B 
+         B --> C MSG.SENDER = B, TX.ORIGIN = A. ( El tx.origin viene reflejado a partir del primer contrato) 
+         con lo cuál hay que usar siempre el msg.sender en lugar de
 
 Un contrato malintencionado puede engañar al propietario de un contrato para que llame a una función que solo el propietario debería poder llamar.
 Usando la función a continuación puedes atacar usando la wallet mediante el tx.origin
