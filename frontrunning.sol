@@ -22,10 +22,30 @@ EJECUCIÓN POR PARTES:
 6. La transacción de Eve se realizó antes que la transacción de Bob.
 
 PORQUE ( GasBOB < GasEVE) con lo cuál en la mempool --->     TRANSACCIÓN --> SOLVE("ETHEREUM") GAS 100 GWEI EVE
-                                                                             SOLVE("ETHEREUM") GAS 15 GWEI BOB ( Se ejecutan por cantidad de gas, cómo más gas antes se ejeecuta)
+                                                                             SOLVE("ETHEREUM") GAS 15 GWEI BOB ( Se ejecutan por cantidad de gas, cómo más gas antes se ejecuta)
 ¿Qué ha pasado?
+Las transacciones tardan algún tiempo en ser minadas.
+Las transacciones que aún no se han extraído se colocan en el grupo de transacciones.
+Las transacciones con un precio de gas más alto suelen realizarse primero.
+Un atacante puede obtener la respuesta del grupo de transacciones y enviar una transacción
+con un mayor precio del gas por lo que su transacción se incluirá en un bloque antes del original.
+*/
 
+contract FindThisHash {
+    bytes32 public constant hash =
+        0x564ccaf7594d66b1eaaea24fe01f0585bf52ee70852af4eac0cc4b04711cd0e2;
 
+    constructor() payable {}
+
+    function solve(string memory solution) public {
+        require(hash == keccak256(abi.encodePacked(solution)), "Incorrect answer");
+
+        (bool sent, ) = msg.sender.call{value: 10 ether}("");
+        require(sent, "Failed to send Ether");
+    }
+}
+
+// CÓMO EVITARLO?
 
 
 
