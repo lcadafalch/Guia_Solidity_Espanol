@@ -1,20 +1,33 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+// AUTODESTRUCCIÓN O SELFDESTRUCT
+/*Los contratos se pueden eselfdestruct envía todo el Ether restante almacenado en el contrato a una dirección designada.
+Eliminar de la cadena de bloques llamando a la función selfdestruct().
+*/
 
-// The goal of this game is to be the 7th player to deposit 1 Ether.
-// Players can deposit only 1 Ether at a time.
-// Winner will be able to withdraw all Ether.
-
+VULNERABILIDAD
+Un contrato malicioso puede utilizar la autodestrucción para forzar el envío de Ether a cualquier contrato.
 /*
-1. Deploy EtherGame
-2. Players (say Alice and Bob) decides to play, deposits 1 Ether each.
-2. Deploy Attack with address of EtherGame
-3. Call Attack.attack sending 5 ether. This will break the game
-   No one can become the winner.
 
-What happened?
-Attack forced the balance of EtherGame to equal 7 ether.
-Now no one can deposit and the winner cannot be set.
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+// EJEMPLO 
+
+// El objetivo de este juego es ser el séptimo jugador en depositar 1 Ether.
+// Los jugadores pueden depositar solo 1 Ethereum a la vez.
+// El ganador final podrá retirar todo el Ethereum.
+
+// FUNCIONAMIENTO
+/*
+1. Desplegar EtherGame
+2. Los jugadores (por ejemplo, Alice y Bob) deciden jugar y depositan 1 Ether cada uno.
+3. Implementar Attack con la dirección de EtherGame
+
+4. Ejecutando a Attack.attack() enviando 5 Ethereum. Esto romperá el juego.
+   Nadie puede convertirse en el ganador.
+
+¿Qué ha pasado?
+
+Ahora nadie puede depositar y no se puede determinar el ganador.
 */
 
 contract EtherGame {
@@ -56,3 +69,5 @@ contract Attack {
         selfdestruct(addr);
     }
 }
+
+
