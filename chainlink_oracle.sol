@@ -1,5 +1,6 @@
 // CÓMO USAR UN ORACLE DE CHAINLINK EN LA RED DE ETHEREUM 
 // SPDX-License-Identifier: MIT
+// Este código es un ejemplo de un oráculo en Chainlink
 pragma solidity ^0.8.17;
 
 // import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
