@@ -1,4 +1,4 @@
-//Smart contract de chainlink para generar un numero aleatorio
+//Smart contract de chainlink para generar un numero aleatorio de forma segura
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
