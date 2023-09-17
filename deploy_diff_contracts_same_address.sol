@@ -2,6 +2,7 @@
 
 La dirección del contrato implementada con create se calcula de la siguiente manera.
 
-```solidity 
+´´´solidity 
 contract address = last 20 bytes of sha3(rlp_encode(sender, nonce))
-```
+´´´
+
