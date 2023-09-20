@@ -1,4 +1,5 @@
-// Code consists of a single object. A single "code" node is the code of the object.
+// Ejemplo de código en YUL , progamación de la EVM en bajo nivel
+ "code" node is the code of the object.
 // Every (other) named object or data section is serialized and
 // made accessible to the special built-in functions datacopy / dataoffset / datasizee
 // Access to nested objects can be performed by joining the names using ``.``.
