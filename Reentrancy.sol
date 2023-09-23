@@ -84,7 +84,7 @@ contract Attack {
 /*
 Técnicas Preventivas
 
-Asegúrese de que se produzcan todos los cambios de estado antes de llamar a los contratos externos
+Asegurarse que se realizen las acciones antes de llamar a los contratos externos
 Use modificadores de funciones que eviten el reingreso
 Aquí hay un ejemplo de un guardia de reingreso
 */
