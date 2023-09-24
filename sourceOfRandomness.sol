@@ -1,6 +1,12 @@
-//Smart contract de chainlink para generar un numero aleatorio de forma segura
-// USANDO LOS ORÁCULOS DE CHAINLINK
+// FUENTE SEGURA PARA UN NUMERO ALEATORIO
+
+
+// EN este caso hablaremos de blockhash y block.timestamp no son una fuente segura para coger un numero aleatorio
 // SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+
+
 pragma solidity ^0.8.17;
 
 /*
