@@ -10,12 +10,8 @@ pragma solidity ^0.8.20;
 pragma solidity ^0.8.17;
 
 /*
-NOTE: cannot use blockhash in Remix so use ganache-cli
+NOTE: No se puede usar remix para hacer esta prueba, entonces se hace con ganache
 
-npm i -g ganache-cli
-ganache-cli
-In remix switch environment to Web3 provider
-*/
 
 /*
 GuessTheRandomNumber is a game where you win 1 Ether if you can guess the
