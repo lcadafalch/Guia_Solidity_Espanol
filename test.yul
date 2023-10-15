@@ -61,7 +61,6 @@ object "Contract1" {
             code {
                 // code here ...
             }
-
             object "runtime" {
                 code {
                     // code here ...
