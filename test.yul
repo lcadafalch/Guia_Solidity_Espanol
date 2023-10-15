@@ -12,7 +12,6 @@ object "Contract1" {
             if iszero(ptr) { ptr := 0x60 }
             mstore(0x40, add(ptr, size))
         }
-
         // first create "runtime.Contract2"
         let size := datasize("runtime.Contract2")
         let offset := allocate(size)
