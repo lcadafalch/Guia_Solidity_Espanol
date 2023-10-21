@@ -4,11 +4,6 @@
 // EN este caso hablaremos de blockhash y block.timestamp no son una fuente segura para coger un numero aleatorio
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
-
-
-
-pragma solidity ^0.8.17;
-
 /*
 NOTE: No se puede usar remix para hacer esta prueba, entonces se hace con ganache
 
