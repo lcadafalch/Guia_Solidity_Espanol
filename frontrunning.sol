@@ -47,6 +47,8 @@ contract FindThisHash {
 
 // CÓMO EVITARLO?
 // USANDO FLASHBOTS 
+// Guía para el uso de Flashbots
+https://docs.flashbots.net/flashbots-protect/quick-start
 
 
 
