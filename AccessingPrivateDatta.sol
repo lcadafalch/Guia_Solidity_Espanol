@@ -2,6 +2,7 @@
 */
 Hay que tener en cuenta que TODOS  los datos dentro de la blockchain son públicos.
 Veamos cómo podemos leer datos privados. En el proceso, aprenderá cómo Solidity almacena variables de estado.
+
 */
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
