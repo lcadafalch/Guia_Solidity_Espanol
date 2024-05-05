@@ -1,5 +1,6 @@
 ![Screenshot](solidityEspanol.png) 
 ### *ATAQUES en Solidity En Español (Descripción y principales)*
+** ESTE REPO ESTÁ HECHO PARA LA VERSIÓN 0.8.17 de Solidity, se irá actualizando y haciendo cambios con las nuevas versiones que vayan saliendo de solidity**
 
 **DE QUE TRATA ESTE REPOSITORIO?** <br />
 
