@@ -2,6 +2,8 @@
 ### *ATAQUES en Solidity En Español (Descripción y principales)*
 ** ESTE REPO ESTÁ HECHO PARA LA VERSIÓN 0.8.17 de Solidity, se irá actualizando y haciendo cambios con las nuevas versiones que vayan saliendo de solidity**
 
+**Válido para la Version 0.8.27**
+
 **DE QUE TRATA ESTE REPOSITORIO?** <br />
 
 Análisis de múltiples fuentes de ataque en Solidity (contratos inteligentes) y consejos de cómo solventarlo e identificarlo.
