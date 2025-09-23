@@ -1,0 +1,28 @@
+Solidity v0.8.30: Análisis Técnico
+Este repositorio contiene recursos y un análisis detallado sobre las novedades de Solidity v0.8.30, una versión crucial para el ecosistema de Ethereum.
+
+Contexto del Lanzamiento
+La versión 0.8.30 del compilador de Solidity es un lanzamiento de mantenimiento que se alinea con la actualización de la red de Ethereum, Pectra. El cambio más notable es la actualización del EVM por defecto de cancun a prague. Esta transición es fundamental para el desarrollo de contratos inteligentes, ya que afecta directamente a la capa de ejecución.
+
+Impacto de las EIPs en Solidity
+La actualización Pectra introduce varias Ethereum Improvement Proposals (EIPs) con implicaciones directas para los desarrolladores.
+
+EIP-7623: Aumento del Costo de calldata
+Esta EIP incrementa el costo del calldata para transacciones que transportan grandes cantidades de datos. Aunque esto ayuda a gestionar el ancho de banda de la red, presenta un desafío técnico para el ConstantOptimizer del compilador de Solidity.
+
+Problemática: El optimizador debe reevaluar la compensación entre el costo de gas y el tamaño de los bytes al codificar constantes. Por ejemplo, la elección entre una instrucción PUSH32 y una PUSH0 se ve afectada por el nuevo costo del calldata.
+
+Decisión del Compilador: El equipo de Solidity optó por no modificar la lógica interna. En su lugar, se recomienda a los desarrolladores ajustar el parámetro --optimizer-runs para reflejar sus prioridades: un valor bajo para optimizar el costo de despliegue y un valor alto para el costo de ejecución.
+
+EIP-7702: Habilitar Código en Cuentas EOA
+Esta propuesta introduce un nuevo tipo de transacción que permite a una cuenta de tipo EOA (Externally Owned Account) delegar su comportamiento a un contrato ya existente. Esto representa un paso fundamental hacia la abstracción de cuentas completa.
+
+Relevancia para Solidity: Si bien esta versión no añade cambios nuevos en el lenguaje, se basa en la funcionalidad introducida en la v0.8.29, que ya permitía gestionar el storage layout de una EOA de manera segura para múltiples delegados.
+
+EIP-2537: Precompilado de Curva BLS12-381
+Después de casi cinco años de desarrollo, esta EIP añade un precompilado que permite realizar operaciones con la curva BLS12-381 en la cadena, haciendo posible la verificación de firmas BLS agregables.
+
+Implementación en Solidity: La versión 0.8.30 no incluye builtins globales para este precompilado. Los desarrolladores deben invocar las funciones de forma manual. El equipo de Solidity considera que esta funcionalidad se gestiona mejor a través de una biblioteca externa, en lugar de ser una característica nativa del lenguaje.
+
+Conclusión
+La versión 0.8.30 es vital para mantener la compatibilidad del compilador con la evolución de la EVM. Es crucial que los desarrolladores de contratos inteligentes comprendan estos cambios para escribir código eficiente y seguro.
